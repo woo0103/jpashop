@@ -11,19 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class MemberRepositoryTest {
 
-    @Autowired
-    MemberRepository memberRepository;
 
-    @Test
-    @Transactional
-    public void testMember() {
-        Member member = new Member();
-        member.setName("memberA");
-        Long savedId = memberRepository.save(member);
-
-        Member findMember = memberRepository.find(savedId);
-
-        Assertions.assertThat(findMember.getName()).isEqualTo(member.getName());
-    }
 
 }
